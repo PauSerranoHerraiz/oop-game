@@ -69,7 +69,9 @@ class Obstacle {
 }
 
 const player = new Player() //crea una instancia de la clase Player
+
 const obstacle1 = new Obstacle()
+
 const obstaclesArr = []; //array con instancias de la clase Obstacle
 
 
