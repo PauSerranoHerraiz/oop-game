@@ -3,7 +3,7 @@ class Player {
     constructor() {
         this.width = 20;
         this.height = 5;
-        this.positionX = 50 - this.width/2;
+        this.positionX = 50 - this.width / 2;
         this.positionY = 0;
 
         this.updateUi()
@@ -78,9 +78,19 @@ setInterval(() => {
     obstaclesArr.push(newObstacle)
 }, 5000)
 
+
 setInterval(() => {
-    obstaclesArr.forEach((element, i, arr) =>{
+    obstaclesArr.forEach((element, i, arr) => {
         element.moveDown()
+
+        if (
+            player.positionX < element.positionX + element.width &&
+            player.positionX + player.width > element.positionX &&
+            player.positionY < element.positionY + element.height &&
+            player.positionY + player.height > element.positionY
+        ) {
+            location.href ="gameover.html";
+        }
     })
 }, 40)
 
